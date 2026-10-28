@@ -1,0 +1,165 @@
+================================================================================
+           COMPILER OPTIMIZATION ENGINE - TRANSFORMATION AUDIT                  
+================================================================================
+Generated On         : 2026-10-28 16:43:55
+Target Architecture  : x86-64 / High-Level AST & IR
+Optimization Engine  : Multi-Pass AST & Source Rewriter (v2.0)
+AI Coprocessor       : Qwen 2.5 Coder 7B (NVIDIA RTX 4050 Laptop GPU)
+--------------------------------------------------------------------------------
+
++------------------------------------------------------------------------------+
+|                             METRICS & OVERVIEW                               |
++------------------------------------------------------------------------------+
+| Source File                  : input.cpp                                     |
+| Optimized File               : input_optimized.cpp                           |
+| Original Line Count          : 28 lines                                      |
+| Optimized Line Count         : 16 lines                                      |
+| Code Size Reduction          : 42.9% (12 lines eliminated)                   |
+| Total Transformations        : 18 events                                     |
++------------------------------------------------------------------------------+
+
++------------------------------------------------------------------------------+
+|                    TRANSFORMATION SUMMARY BY CATEGORY                        |
++-------------------------------------------------------+----------------------+
+| PASS CATEGORY                                         | COUNT                |
++-------------------------------------------------------+----------------------+
+| Constant Folding                                      | 2                    |
+| Constant Propagation                                  | 4                    |
+| Unreachable Code                                      | 2                    |
+| Unused Variable Removal                               | 10                   |
++-------------------------------------------------------+----------------------+
+
+================================================================================
+                       DETAILED TRANSFORMATION RECORDS                          
+================================================================================
+
+[EVENT #01]  Category : Constant Propagation
+             Location : Line 15
+             Action   : Propagated variable 'a' -> '9'
+             Why      : Variable 'a' is initialized to a constant literal and is never mutated.
+             Effect   : Substituted variable reference with constant literal value, enabling further optimizations.
+             Safety   : [VERIFIED] (Yes (Variable value is immutable))
+--------------------------------------------------------------------------------
+[EVENT #02]  Category : Constant Propagation
+             Location : Line 15
+             Action   : Propagated variable 'b' -> '13'
+             Why      : Variable 'b' is initialized to a constant literal and is never mutated.
+             Effect   : Substituted variable reference with constant literal value, enabling further optimizations.
+             Safety   : [VERIFIED] (Yes (Variable value is immutable))
+--------------------------------------------------------------------------------
+[EVENT #03]  Category : Constant Propagation
+             Location : Line 17
+             Action   : Propagated variable 'fulya' -> '20'
+             Why      : Variable 'fulya' is initialized to a constant literal and is never mutated.
+             Effect   : Substituted variable reference with constant literal value, enabling further optimizations.
+             Safety   : [VERIFIED] (Yes (Variable value is immutable))
+--------------------------------------------------------------------------------
+[EVENT #04]  Category : Constant Propagation
+             Location : Line 17
+             Action   : Propagated variable 'sassy' -> '10'
+             Why      : Variable 'sassy' is initialized to a constant literal and is never mutated.
+             Effect   : Substituted variable reference with constant literal value, enabling further optimizations.
+             Safety   : [VERIFIED] (Yes (Variable value is immutable))
+--------------------------------------------------------------------------------
+[EVENT #05]  Category : Constant Folding
+             Location : Line 15
+             Action   : Folded expression '9+13' -> '22'
+             Why      : Post-propagation expression consists solely of compile-time literal operands.
+             Effect   : Evaluated arithmetic at compile time, replacing runtime calculation with constant value.
+             Safety   : [VERIFIED] (Yes (Mathematical result is identical))
+--------------------------------------------------------------------------------
+[EVENT #06]  Category : Constant Folding
+             Location : Line 17
+             Action   : Folded expression '10 + 20' -> '30'
+             Why      : Post-propagation expression consists solely of compile-time literal operands.
+             Effect   : Evaluated arithmetic at compile time, replacing runtime calculation with constant value.
+             Safety   : [VERIFIED] (Yes (Mathematical result is identical))
+--------------------------------------------------------------------------------
+[EVENT #07]  Category : Unused Variable Removal
+             Location : Line 5
+             Action   : Removed declaration 'int sassy = 10;'
+             Why      : Variable 'sassy' is never referenced in the code and initialization has no side effects.
+             Effect   : Eliminated unused local variable declaration and saved stack frame memory allocation.
+             Safety   : [VERIFIED] (Yes (Variable is never read and initializer is side-effect-free))
+--------------------------------------------------------------------------------
+[EVENT #08]  Category : Unused Variable Removal
+             Location : Line 6
+             Action   : Removed declaration 'int unused = 50;'
+             Why      : Variable 'unused' is never referenced in the code and initialization has no side effects.
+             Effect   : Eliminated unused local variable declaration and saved stack frame memory allocation.
+             Safety   : [VERIFIED] (Yes (Variable is never read and initializer is side-effect-free))
+--------------------------------------------------------------------------------
+[EVENT #09]  Category : Unused Variable Removal
+             Location : Line 7
+             Action   : Removed declaration 'int fulya = 20;'
+             Why      : Variable 'fulya' is never referenced in the code and initialization has no side effects.
+             Effect   : Eliminated unused local variable declaration and saved stack frame memory allocation.
+             Safety   : [VERIFIED] (Yes (Variable is never read and initializer is side-effect-free))
+--------------------------------------------------------------------------------
+[EVENT #10]  Category : Unused Variable Removal
+             Location : Line 8
+             Action   : Removed declaration 'double dead_weight = 99.99;'
+             Why      : Variable 'dead_weight' is never referenced in the code and initialization has no side effects.
+             Effect   : Eliminated unused local variable declaration and saved stack frame memory allocation.
+             Safety   : [VERIFIED] (Yes (Variable is never read and initializer is side-effect-free))
+--------------------------------------------------------------------------------
+[EVENT #11]  Category : Unused Variable Removal
+             Location : Line 11
+             Action   : Removed declaration 'string vedant = "lassi";'
+             Why      : Variable 'vedant' is never referenced in the code and initialization has no side effects.
+             Effect   : Eliminated unused local variable declaration and saved stack frame memory allocation.
+             Safety   : [VERIFIED] (Yes (Variable is never read and initializer is side-effect-free))
+--------------------------------------------------------------------------------
+[EVENT #12]  Category : Unused Variable Removal
+             Location : Line 12
+             Action   : Removed declaration 'int x;'
+             Why      : Variable 'x' is never referenced in the code and initialization has no side effects.
+             Effect   : Eliminated unused local variable declaration and saved stack frame memory allocation.
+             Safety   : [VERIFIED] (Yes (Variable is never read and initializer is side-effect-free))
+--------------------------------------------------------------------------------
+[EVENT #13]  Category : Unused Variable Removal
+             Location : Line 13
+             Action   : Removed declaration 'int a = 9;'
+             Why      : Variable 'a' is never referenced in the code and initialization has no side effects.
+             Effect   : Eliminated unused local variable declaration and saved stack frame memory allocation.
+             Safety   : [VERIFIED] (Yes (Variable is never read and initializer is side-effect-free))
+--------------------------------------------------------------------------------
+[EVENT #14]  Category : Unused Variable Removal
+             Location : Line 14
+             Action   : Removed declaration 'int b = 13;'
+             Why      : Variable 'b' is never referenced in the code and initialization has no side effects.
+             Effect   : Eliminated unused local variable declaration and saved stack frame memory allocation.
+             Safety   : [VERIFIED] (Yes (Variable is never read and initializer is side-effect-free))
+--------------------------------------------------------------------------------
+[EVENT #15]  Category : Unused Variable Removal
+             Location : Line 20
+             Action   : Removed declaration 'int dimbnar = 57857473;'
+             Why      : Variable 'dimbnar' is never referenced in the code and initialization has no side effects.
+             Effect   : Eliminated unused local variable declaration and saved stack frame memory allocation.
+             Safety   : [VERIFIED] (Yes (Variable is never read and initializer is side-effect-free))
+--------------------------------------------------------------------------------
+[EVENT #16]  Category : Unused Variable Removal
+             Location : Line 24
+             Action   : Removed declaration 'int unused_in_main = 1000;'
+             Why      : Variable 'unused_in_main' is never referenced in the code and initialization has no side effects.
+             Effect   : Eliminated unused local variable declaration and saved stack frame memory allocation.
+             Safety   : [VERIFIED] (Yes (Variable is never read and initializer is side-effect-free))
+--------------------------------------------------------------------------------
+[EVENT #17]  Category : Unreachable Code
+             Location : Line 17
+             Action   : Removed unreachable statement 'int shreyas = 30;'
+             Why      : Statement appears after an unconditional 'return' or 'break' statement within the same block.
+             Effect   : Eliminated dead code that can never execute, reducing binary size.
+             Safety   : [VERIFIED] (Yes (Code path is provably unreachable))
+--------------------------------------------------------------------------------
+[EVENT #18]  Category : Unreachable Code
+             Location : Line 19
+             Action   : Removed unreachable statement 'return shreyas;'
+             Why      : Statement appears after an unconditional 'return' or 'break' statement within the same block.
+             Effect   : Eliminated dead code that can never execute, reducing binary size.
+             Safety   : [VERIFIED] (Yes (Code path is provably unreachable))
+--------------------------------------------------------------------------------
+
+================================================================================
+ [END OF AUDIT REPORT - ALL TRANSFORMATION PASSES VERIFIED CORRECT]             
+================================================================================
